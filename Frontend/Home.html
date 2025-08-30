@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crypto Project</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    .table th, .table td {
+      padding: 15px;
+      vertical-align: middle;
+      border-right: 1px solid #dee2e6; /* Separate columns */
+    }
+    .table th:last-child, .table td:last-child {
+      border-right: none; /* Remove border for last column */
+    }
+    .coin-img {
+      width: 30px;
+      height: 30px;
+      display: block;
+      margin: 0 auto; /* Center images in the column */
+    }
+    .change-positive {
+      color: #28a745 !important;
+    }
+    .change-negative {
+      color: #dc3545 !important;
+    }
+    /* Ensure navbar border is visible in light mode */
+    body[data-bs-theme="light"] .navbar {
+      border-bottom: 1px solid #0000001a;
+    }
+    /* Adjust navbar background for light mode */
+    body[data-bs-theme="light"] .navbar {
+      background-color: #f8f9fa !important;
+    }
+    /* Style for pagination buttons */
+    .pagination-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    /* Style for favorite button */
+    .favorite-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #ffc107; /* Yellow for star icon */
+    }
+    /* Ensure favorite button visibility in dark mode */
+    body[data-bs-theme="dark"] .favorite-btn {
+      color: #ffca28; /* Brighter yellow for dark mode */
+    }
+  </style>
+</head>
+
+<body data-bs-theme="light">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-light border-bottom shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">Crypto Tracker</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <div class="me-auto">
+          <div class="btn-group dropend">
+            <button type="button" class="btn btn-light dropdown-toggle px-3" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Navigate
+            </button>
+            <ul class="dropdown-menu shadow">
+              <li><a class="dropdown-item" href="#">Home</a></li>
+              <li><a class="dropdown-item" href="#">Portfolio</a></li>
+              <li><a class="dropdown-item" href="#">About</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <input class="form-control rounded" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success px-3" type="button">Search</button>
+          <button id="themeToggle" type="button" class="btn btn-outline-dark px-3">
+            <i id="themeIcon" class="bi bi-moon-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Crypto Tracker Section -->
+  <div class="container my-5">
+    <div class="table-responsive shadow rounded">
+      <table class="table table-hover align-middle mb-0">
+        <thead class="table-primary text-center">
+          <tr>
+            <th>#</th>
+            <th>Image</th>
+            <th>Coin</th>
+            <th>Price (USD)</th>
+            <th>24h Change</th>
+            <th>Market Cap</th>
+            <th>Add to Favorites</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td>1</td>
+            <td><img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="Bitcoin" class="coin-img"></td>
+            <td>Bitcoin (BTC)</td>
+            <td>$42,150</td>
+            <td class="change-positive">+2.3%</td>
+            <td>$820B</td>
+            <td><button class="favorite-btn"><i class="bi bi-star"></i></button></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Ethereum" class="coin-img"></td>
+            <td>Ethereum (ETH)</td>
+            <td>$2,150</td>
+            <td class="change-negative">-1.2%</td>
+            <td>$260B</td>
+            <td><button class="favorite-btn"><i class="bi bi-star"></i></button></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><img src="https://assets.coingecko.com/coins/images/325/small/Tether.png" alt="Tether" class="coin-img"></td>
+            <td>Tether (USDT)</td>
+            <td>$1.00</td>
+            <td class="text-muted">0.0%</td>
+            <td>$95B</td>
+            <td><button class="favorite-btn"><i class="bi bi-star"></i></button></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><img src="https://assets.coingecko.com/coins/images/975/small/cardano.png" alt="Cardano" class="coin-img"></td>
+            <td>Cardano (ADA)</td>
+            <td>$0.45</td>
+            <td class="change-positive">+1.8%</td>
+            <td>$16B</td>
+            <td><button class="favorite-btn"><i class="bi bi-star"></i></button></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><img src="https://assets.coingecko.com/coins/images/12559/small/solana.png" alt="Solana" class="coin-img"></td>
+            <td>Solana (SOL)</td>
+            <td>$140.25</td>
+            <td class="change-negative">-0.9%</td>
+            <td>$65B</td>
+            <td><button class="favorite-btn"><i class="bi bi-star"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Next and Previous Buttons -->
+    <div class="pagination-buttons">
+      <button class="btn btn-outline-primary" type="button">Previous</button>
+      <button class="btn btn-outline-primary" type="button">Next</button>
+    </div>
+  </div>
+
+  <script>
+    // Theme Toggle
+    const body = document.body;
+    const toggleBtn = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+    const navbar = document.querySelector(".navbar");
+    const dropdownBtn = document.querySelector(".btn-group .btn");
+
+    toggleBtn.addEventListener("click", () => {
+      if (body.getAttribute("data-bs-theme") === "light") {
+        body.setAttribute("data-bs-theme", "dark");
+        navbar.classList.remove("bg-light");
+        navbar.classList.add("bg-dark");
+        dropdownBtn.classList.remove("btn-light");
+        dropdownBtn.classList.add("btn-dark");
+        themeIcon.className = "bi bi-sun-fill";
+        toggleBtn.classList.remove("btn-outline-dark");
+        toggleBtn.classList.add("btn-outline-light");
+      } else {
+        body.setAttribute("data-bs-theme", "light");
+        navbar.classList.remove("bg-dark");
+        navbar.classList.add("bg-light");
+        dropdownBtn.classList.remove("btn-dark");
+        dropdownBtn.classList.add("btn-light");
+        themeIcon.className = "bi bi-moon-fill";
+        toggleBtn.classList.remove("btn-outline-light");
+        toggleBtn.classList.add("btn-outline-dark");
+      }
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
