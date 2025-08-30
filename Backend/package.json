@@ -1,0 +1,17 @@
+{
+  "name": "crypto_tracker",
+  "version": "1.0.0",
+  "description": "this is a crypto tracking application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rohan_Reddy",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "mongodb": "^6.19.0"
+  }
+}
