@@ -1,0 +1,104 @@
+/* ---------- Navbar ---------- */
+.glassy-navbar {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease-in-out;
+}
+
+body[data-bs-theme="dark"] .glassy-navbar {
+  background: rgba(30, 30, 30, 0.85);
+}
+
+/* ---------- Search Input ---------- */
+.search-wrapper {
+  position: relative;
+}
+
+.search-input {
+  border-radius: 30px;
+  padding: 6px 14px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  border-color: #007bff;
+}
+
+/* ---------- Table ---------- */
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.coin-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.change-positive {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.change-negative {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.05);
+  transform: scale(1.01);
+  transition: 0.2s ease-in-out;
+}
+
+/* ---------- Favorites ---------- */
+.favorite-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: #ffc107;
+  transition: transform 0.2s ease;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.2);
+}
+
+body[data-bs-theme="dark"] .favorite-btn {
+  color: #ffca28;
+}
+
+body[data-bs-theme="dark"] .favorite-btn i {
+  text-shadow: 0 0 8px #ffca28;
+}
+
+/* ---------- Pagination ---------- */
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.pagination-buttons .btn {
+  font-weight: 600;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Dark Mode ---------- */
+body[data-bs-theme="dark"] {
+  background-color: #121212;
+  color: #e4e6eb;
+}
+
+body[data-bs-theme="dark"] .table {
+  background-color: #1c1c1c;
+  color: #f1f1f1;
+}
+
+body[data-bs-theme="dark"] .table thead {
+  background-color: #2a2a2a;
+}

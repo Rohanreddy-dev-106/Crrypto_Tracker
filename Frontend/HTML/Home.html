@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crypto Tracker</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg glassy-navbar fixed-top shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-primary" href="#">🪙 Crypto Tracker</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="AddTofavor.html" target="_blank">Favorite</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <div class="search-wrapper">
+            <input type="text" class="form-control search-input" placeholder="🔍 Search coin...">
+          </div>
+          <button id="themeToggle" type="button" class="btn btn-outline-dark rounded-circle">
+            <i id="themeIcon" class="bi bi-moon-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Crypto Tracker Section -->
+  <main class="container my-5 pt-5">
+    <div class="card shadow-lg rounded-4 border-0 overflow-hidden">
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0 text-center">
+            <thead class="table-primary">
+              <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Coin</th>
+                <th>Price (USD)</th>
+                <th>24h Change</th>
+                <th>Market Cap</th>
+                <th>Favorites</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="Bitcoin" class="coin-img"></td>
+                <td>Bitcoin (BTC)</td>
+                <td>$42,150</td>
+                <td class="change-positive">+2.3%</td>
+                <td>$820B</td>
+                <td><button class="favorite-btn"><i class="bi bi-star"></i></button></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Ethereum" class="coin-img"></td>
+                <td>Ethereum (ETH)</td>
+                <td>$2,150</td>
+                <td class="change-negative">-1.2%</td>
+                <td>$260B</td>
+                <td><button class="favorite-btn"><i class="bi bi-star"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination-buttons">
+      <button class="btn btn-primary  px-4">⬅</button>
+      <button class="btn btn-primary px-4">➡</button>
+    </div>
+  </main>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Script -->
+  <script type="module" src="../JS/index.js"></script>
+</body>
+</html>
